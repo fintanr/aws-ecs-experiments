@@ -139,7 +139,7 @@ echo ""
 echo "Launch instance"
 
 ## Todo ecsDemoRole is just something we have setup, need to confirm its in place
-:
+
 AWS_INSTANCE_IDS=$(aws ec2 run-instances --image-id $AWS_AMI --count $ECSDEMO_HOSTCOUNT --instance-type t2.micro --key-name $KEYPAIR --security-group-ids $THIS_GROUPID --subnet-id $THIS_SUBNET_ID --associate-public-ip-address --iam-instance-profile Name=ecsDemoRole | jq -r '.Instances[].InstanceId') 
 
 echo "Getting public IP"
